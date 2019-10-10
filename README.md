@@ -8,7 +8,7 @@ It was created by following [this guide](https://itnext.io/step-by-step-building
 Install from npm:
 
 ```powershell
-npm install ts-common-tools --save-dev
+npm install ts-common-tools --save
 ```
 
 ## Usage
