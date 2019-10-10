@@ -15,9 +15,9 @@
     "lint-test": "tslint -p test/tsconfig.json",
     "lint-src": "tslint -p src/tsconfig.json"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["util", "typescript", "node", "web"],
+  "author": "Engineer2B",
+  "license": "MIT",
   "devDependencies": {
     "@types/jest": "^24.0.18",
     "@types/node": "^12.7.12",
@@ -30,5 +30,8 @@
   "files": [
     "build/**/*"
   ],
-  "dependencies": {}
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Engineer2B/ts-common-tools.git"
+  }
 }
