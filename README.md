@@ -11,13 +11,15 @@ Install from npm:
 npm install ts-common-tools --save-dev
 ```
 
-## Node-js import syntax
+## Usage
 
 ```ts
 import {Logger} from "ts-common-tools/logger";
 ```
 
-Check https://github.com/Engineer2B/ts-common-tools/tree/master/src for available classes.
+More info on how to consume this package [here](https://github.com/microsoft/TypeScript/issues/8305#issuecomment-254017287). 
+
+Check [github](https://github.com/Engineer2B/ts-common-tools/tree/master/src) for available classes.
 
 ## License
 
