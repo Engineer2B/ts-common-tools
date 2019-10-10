@@ -14,7 +14,7 @@ npm install ts-common-tools --save
 ## Usage
 
 ```ts
-import {Logger} from "ts-common-tools/logger";
+import {Logger} from "ts-common-tools/Utility/Logger";
 ```
 
 More info on how to consume this package [here](https://github.com/microsoft/TypeScript/issues/8305#issuecomment-254017287). 

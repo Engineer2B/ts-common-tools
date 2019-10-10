@@ -1,8 +1,8 @@
 {
   "name": "ts-common-tools",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Common TypeScript functionality used in various projects.",
-  "main": "index.js",
+  "main": "build/index.js",
   "scripts": {
     "test": "jest --config test\\jestconfig.json",
     "build": "tsc -p src/tsconfig.json",
