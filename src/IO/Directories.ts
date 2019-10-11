@@ -10,7 +10,7 @@ export class Directories {
 	 */
 	public static ThisDir = __dirname;
 	/**
-	 * The root directory of the disk where this solution is located.
+	 * The root directory of the disk where this program is located.
 	 */
 	public static SystemRoot = path.parse(__dirname).root;
 
@@ -30,14 +30,9 @@ export class Directories {
 	}
 
 	/**
-	 * This solution's directory.
+	 * The directory from which the program is run.
 	 */
-	public static SolutionDir = process.cwd();
-
-	/**
-	 * This project's directory.
-	 */
-	public static ProjectDir = path.resolve(__dirname, '..', '..');
+	public static RunDir = process.cwd();
 
 	protected static dropBoxDir: string;
 
@@ -45,7 +40,11 @@ export class Directories {
 		return path.join.apply(undefined, [directory].concat(fileName));
 	}
 
-	public static ThisDirPlus(pathStrings: string[]): string {
-		return path.join.apply(undefined, [Directories.ProjectDir].concat(pathStrings));
+	/**
+	 * Path relative to the directory from which the program is run.
+	 * @param {string[]} pathStrings List of paths.
+	 */
+	public static RunDirPlus(pathStrings: string[]): string {
+		return path.join.apply(undefined, [Directories.RunDir].concat(pathStrings));
 	}
 }
