@@ -1,6 +1,6 @@
 {
   "name": "ts-common-tools",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Common TypeScript functionality used in various projects.",
   "main": "build/index.js",
   "scripts": {
@@ -33,5 +33,10 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/Engineer2B/ts-common-tools.git"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/Engineer2B/ts-common-tools/issues",
+    "email": "borisbreuer1@gmail.com"
+  },
+  "homepage": "https://github.com/Engineer2B/ts-common-tools#readme"
 }
