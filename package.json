@@ -1,6 +1,6 @@
 {
   "name": "ts-common-tools",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "Common TypeScript functionality used in various projects.",
   "main": "build/index.js",
   "scripts": {
@@ -15,7 +15,12 @@
     "lint-test": "tslint -p test/tsconfig.json",
     "lint-src": "tslint -p src/tsconfig.json"
   },
-  "keywords": ["util", "typescript", "node", "web"],
+  "keywords": [
+    "util",
+    "typescript",
+    "node",
+    "web"
+  ],
   "author": "Engineer2B",
   "license": "MIT",
   "devDependencies": {
