@@ -1,6 +1,6 @@
 {
   "name": "ts-common-tools",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Common TypeScript functionality used in various projects.",
   "main": "build/index.js",
   "scripts": {
@@ -43,5 +43,8 @@
     "url": "https://github.com/Engineer2B/ts-common-tools/issues",
     "email": "borisbreuer1@gmail.com"
   },
-  "homepage": "https://github.com/Engineer2B/ts-common-tools#readme"
+  "homepage": "https://github.com/Engineer2B/ts-common-tools#readme",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  }
 }
