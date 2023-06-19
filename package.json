@@ -27,7 +27,7 @@
     "@types/jest": "^24.0.18",
     "@types/node": "^12.7.12",
     "@types/qs": "^6.5.3",
-    "jest": "^24.9.0",
+    "jest": "^29.5.0",
     "ts-jest": "^24.1.0",
     "tslint": "^5.20.0",
     "typescript": "^3.6.4"
