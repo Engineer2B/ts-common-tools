@@ -1,6 +1,6 @@
 {
   "name": "ts-common-tools",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Common TypeScript functionality used in various projects.",
   "main": "build/index.js",
   "scripts": {
