@@ -19,18 +19,27 @@ export class DecEnc {
 	 * @param filePath The file to which the output is saved.
 	 */
 	public EncryptToFile(theString: string, filePath: string): void {
-		// create a aes128 cipher based on our password
-		const cipher = crypto.createCipher(
-			'aes-256-ctr',
-			this.encryptionKey);
-		// update the cipher with our secret string
+		// Define the algorithm
+		const algorithm = 'aes-256-ctr';
+
+		// Ensure your encryption key is of the correct length (32 bytes for aes-256)
+		const key = crypto.createHash('sha256').update(this.encryptionKey).digest();
+
+		// Generate a random Initialization Vector
+		const iv = crypto.randomBytes(16);
+
+		// Create the cipher
+		const cipher = crypto.createCipheriv(algorithm, key, iv);
+
+		// Encrypt the data
 		let encoded = cipher.update(theString, 'utf8', 'hex');
-		// save the encryption as base64-encoded
-		encoded += cipher.final('hex').toString();
-		fs.writeFileSync(
-			filePath,
-			encoded,
-			'utf8');
+		encoded += cipher.final('hex');
+
+		// Combine IV and encrypted data
+		const result = iv.toString('hex') + ':' + encoded;
+
+		// Write to file
+		fs.writeFileSync(filePath, result, 'utf8');
 	}
 
 	/**
@@ -39,15 +48,24 @@ export class DecEnc {
 	 * @returns {string} The decrypted output.
 	 */
 	public DecryptFromFile(filePath: string): string {
-		const encrypted = fs.readFileSync(filePath, 'utf8');
-		// create a aes128 decipher based on our password
-		const decipher = crypto.createDecipher(
-			'aes-256-ctr',
-			this.encryptionKey);
-		// update the decipher with our encrypted string
-		const decoded = decipher.update(encrypted, 'hex', 'utf8');
+		// Read the data from the file
+		const data = fs.readFileSync(filePath, 'utf8');
 
-		return decoded + decipher.final('utf8');
+		// Split the data to get the IV and the encrypted content
+		const [ivHex, encryptedData] = data.split(':');
+		const iv = Buffer.from(ivHex, 'hex');
+
+		// Derive the key (ensure it's the same as used in encryption)
+		const key = crypto.createHash('sha256').update(this.encryptionKey).digest();
+
+		// Create the decipher
+		const decipher = crypto.createDecipheriv('aes-256-ctr', key, iv);
+
+		// Decrypt the data
+		let decrypted = decipher.update(encryptedData, 'hex', 'utf8');
+		decrypted += decipher.final('utf8');
+
+		return decrypted;
 	}
 
 	/**

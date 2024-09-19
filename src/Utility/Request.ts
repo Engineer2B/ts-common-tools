@@ -1,10 +1,10 @@
 // tslint:disable: no-magic-numbers
 import * as http from 'http';
 import * as https from 'https';
-import * as qs from 'qs';
 import { RequestTypeE } from '../Enum/RequestType';
 import { Logger } from './Logger';
 import * as crypto from 'crypto';
+import { StringTool } from './StringTool';
 
 export type Response = {
 	Data: string;
@@ -104,7 +104,7 @@ export class Request {
 		}
 
 		if (bodyData) {
-			req.write(qs.stringify(bodyData));
+			req.write(StringTool.RFC_3986_encode_object(bodyData));
 		}
 		// Use the reject callback for any error.
 		req.on('error', rejectCb);
